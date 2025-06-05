@@ -17,7 +17,7 @@ A clean and responsive Django application that lets users search for word defini
 ## 🖼️ Screenshots
 
 > Example:  
-> ![Search Page](screenshots/search.png)
+> ![Search Page](screenshots/result.png)
 
 ---
 
