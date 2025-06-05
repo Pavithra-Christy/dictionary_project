@@ -1,0 +1,30 @@
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Virtual environment
+venv/
+
+# Environment variables
+.env
+
+# Django migration artifacts
+*.sqlite3
+db.sqlite3
+*.log
+
+# VSCode or PyCharm editor folders (if applicable)
+.vscode/
+.idea/
+
+# Bytecode and compiled files
+*.pyc
+*.pyo
+*.pyd
+
+# System files
+.DS_Store
+Thumbs.db
+
+# MySQL dump or backup files (optional)
+*.sql

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dictionary App</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding: 40px;
+    }
+
+    form {
+      margin-bottom: 20px;
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      width: 300px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #4285f4;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #3367d6;
+    }
+
+    .result {
+      margin-top: 20px;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 600px;
+    }
+
+    .error {
+      color: red;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>📘 Dictionary App</h1>
+  <form method="GET" action="">
+    <input type="text" name="word" placeholder="Enter a word" required>
+    <button type="submit">Search</button>
+  </form>
+
+  {% if word_data.word %}
+    <div class="result">
+      <h2>{{ word_data.word }}</h2>
+
+      {% if word_data.phonetics %}
+        <p><strong>Phonetics:</strong> {{ word_data.phonetics.0.text }}</p>
+      {% endif %}
+
+      {% for meaning in word_data.meanings %}
+        <p><strong>{{ meaning.partOfSpeech }}</strong></p>
+        <ul>
+          {% for definition in meaning.definitions %}
+            <li>{{ definition.definition }}
+              {% if definition.example %}<br><em>Example: {{ definition.example }}</em>{% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  {% if error %}
+    <p class="error">{{ error }}</p>
+  {% endif %}
+</body>
+</html>
