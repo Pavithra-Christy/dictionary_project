@@ -16,7 +16,6 @@ A clean and responsive Django application that lets users search for word defini
 
 ## 🖼️ Screenshots
 
-> *(Optional – Add your own screenshots here later)*  
 > Example:  
 > ![Search Page](screenshots/search.png)
 
@@ -92,4 +91,5 @@ dictionary_project/
 ## 📄 License
 
 This project is for learning purposes.
+
 ---
